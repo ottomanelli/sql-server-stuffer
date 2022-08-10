@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
 using Microsoft.SqlServer.Management.Smo;  
 using Microsoft.SqlServer.Management.Common;  
 
