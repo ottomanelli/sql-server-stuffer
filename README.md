@@ -7,7 +7,9 @@ A script that will fill a specified database table with data. Maybe in the futur
 - [Usage](#usage)
 
 ## Installation
-Just clone the repository.
+Just clone the repository. Different branches work for different versions
+- `main` - .NET 6
+- `v/3.1` - .NET 3.1
 
 ## Arguments
 1. host* (string) - The host server of the database we are stuffing. <br />

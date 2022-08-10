@@ -140,7 +140,7 @@ namespace DatabaseStuffer
               int typeMaxLen = type.value.DataType.MaximumLength;
               int animalNumber = rnd.Next(animals.Count);
               int adjectiveNumber = rnd.Next(adjectives.Count);
-              string animalString = "'" + adjectives[adjectiveNumber] + ' ' + animals[animalNumber] + "'";
+              string animalString = "'" + adjectives[adjectiveNumber] + '_' + animals[animalNumber] + "'";
               string varcharToAppend;
 
               if (animalString.Length < typeMaxLen) {

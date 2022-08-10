@@ -1,4 +1,6 @@
+using System;
 using CommandLine;
+using System.Collections.Generic;
 
 namespace DatabaseStuffer {
   public class Arguments {
