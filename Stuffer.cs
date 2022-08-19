@@ -11,11 +11,13 @@ namespace DatabaseStuffer
       "varchar", "bit", "tinyint", "smallint", "int", "bigint",
     };
 
+    // TODO: Move these to their own file
     private static List<string> animals = new List<string>(){
       "dog", "cat", "lizard", "t-rex", "monkey",
       "bunny", "chinchilla", "dragon", "mole", "horse"
     };
 
+    // TODO: Move these to their own file
     private static List<string> adjectives = new List<string>(){
       "crazy", "funny", "scared", "anxious", "inhumane",
       "bewildered", "flabbergasted", "busy", "ashamed", "calm"
@@ -28,6 +30,8 @@ namespace DatabaseStuffer
             .Select(s => s[rnd.Next(s.Length)]).ToArray());
     }
 
+    // TODO: Add a argument to enable uniqueness for columns, also
+    // add in a check for uniqueness contraints
     public static void Run(Arguments options)
     {
       Console.WriteLine("Running Stuffer.cs...");
@@ -89,6 +93,7 @@ namespace DatabaseStuffer
             }
         }
 
+        // Setup columns
         foreach (Column col in tableToAddStuff.Columns) {
           if (!col.Identity) {
             string dataType = col.DataType.ToString();
@@ -101,6 +106,8 @@ namespace DatabaseStuffer
           }
         }
 
+
+        // Start INSERT Query
         string setupQuery = $"INSERT INTO {tableName} VALUES\n";
 
         for (int i = 0; i < numberOfRows; i++) {
@@ -168,6 +175,7 @@ namespace DatabaseStuffer
           setupQuery += queryToAppend;
         }
 
+        // End query construction
         setupQuery += ";";
 
         Console.WriteLine("Executing below query: \n\n");
